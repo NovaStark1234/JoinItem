@@ -1,0 +1,16 @@
+main: Nova\joinitem\Main
+name: JoinItem
+author: NovaStark1245
+api: 4.0.0
+version: 2.0.0
+description: "Give player starter item"
+
+commands:
+    joinitem:
+        description: "Join Item"
+        permission: joinitem.command.use
+        
+permissions:
+    joinitem.command.use:
+        description: "Joinitem Permission"
+        default: true

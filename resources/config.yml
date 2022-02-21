@@ -1,0 +1,13 @@
+---
+#Format: "<id>|<meta>|<item_name>|<item_lore>|<amount>|<vanilla_enchant>|<enchant_level>"
+#Enchant you can use 'Number (Id)' and 'String (Name)'
+#Leave the enchant section blank if you don't want enchant
+#Use '{line}' in <item_lore> to break a new line
+ItemList:
+  - "306|0|§l§6【§2 Member Helmet §6】|§l§cKit for Member§f!§r|1|unbreaking|3"
+  - "307|0|§l§6【§2 Member Chestplate §6】|§l§cKit for Member§f!§r|1|unbreaking|3"
+  - "308|0|§l§6【§2 Member Leggings §6】|§l§cKit for Member§f!§r|1|unbreaking|3"
+  - "309|0|§l§6【§2 Member Boots §6】|§l§cKit for Member§f!§r|1|unbreaking|3"
+#Same Format With ItemList (Don't use array for DefaultItem!)
+DefaultItem: "399|0|§l§6【§2 Kit Member §6】|§l§cUse§f: §bHold or RightClick to reward a §aSet Member§r|1"
+...
