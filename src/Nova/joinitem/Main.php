@@ -83,8 +83,8 @@ class Main extends PluginBase implements Listener {
 		$itemJoin = $event->getItem();
 		
 		if ($itemJoin->getNamedTag()->getTag("JItem") === null) {
-            return;
-        }
+            		return;
+        	}
 			
 		if($player->getInventory()->getItemInHand()->getCustomName() == explode("|", $this->cfg->get("DefaultItem"))[2]) {
 			$player->getInventory()->removeItem($itemJoin);
