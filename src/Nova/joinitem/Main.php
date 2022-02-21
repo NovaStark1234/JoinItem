@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		$defItem = explode("|", $this->cfg->get("DefaultItem"));
-		if($this->data->exists($pname) && $this->data->get($pname) == 0) {
+		if($this->data->exists($pname) || $this->data->get($pname) == 0) {
 			$item = ItemFactory::getInstance()->get((int)$defItem[0], (int)$defItem[1], (int)$defItem[4]);
 			$item->setCustomName($defItem[2]);
 			$item->setLore(array(str_replace("{line}", "\n", (string)$defItem[3])));
@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener {
 					$item->setCustomName($defItem[2]);
 					$item->setLore(array(str_replace("{line}", "\n", (string)$defItem[3])));
 					if(isset($defItem[5]) && isset($defItem[6])) {
-						if(is_numeric((int)$listItem[5])) {
+						if(is_numeric($defItem[5])) {
 							$item->addEnchantment(new EnchantmentInstance(EnchantmentIdMap::getInstance()->fromId((int)$defItem[5]), (int)$defItem[6]));
 						} else {
 							$item->addEnchantment(new EnchantmentInstance(StringToEnchantmentParser::getInstance()->parse((string)$defItem[5]), (int)$defItem[6]));
@@ -94,7 +94,7 @@ class Main extends PluginBase implements Listener {
 				$item->setCustomName((string)$listItem[2]);
 				$item->setLore(array(str_replace("{line}", "\n", (string)$listItem[3])));
 				if(isset($listItem[5]) && isset($listItem[6])) {
-					if(is_numeric((int)$listItem[5])) {
+					if(is_numeric($listItem[5])) {
 						$item->addEnchantment(new EnchantmentInstance(EnchantmentIdMap::getInstance()->fromId((int)$listItem[5]), (int)$listItem[6]));
 					} else {
 						$item->addEnchantment(new EnchantmentInstance(StringToEnchantmentParser::getInstance()->parse((string)$listItem[5]), (int)$listItem[6]));
