@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		$defItem = explode("|", $this->cfg->get("DefaultItem"));
-		if(!$this->data->exists($pname) || $this->data->get($pname) == 0) {
+		if($this->data->get($pname) === 0) {
 			$item = ItemFactory::getInstance()->get((int)$defItem[0], (int)$defItem[1], (int)$defItem[4]);
 			$item->setCustomName($defItem[2]);
 			$item->setLore(array(str_replace("{line}", "\n", (string)$defItem[3])));
